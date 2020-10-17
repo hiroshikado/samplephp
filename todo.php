@@ -44,3 +44,40 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 ?>
 
 <!DOCTYPE html>
+<html lang= "ja">
+<head>
+    <meta name= "viewport" content= "width=device-width, initial-scale= 1.0">
+    <meta http-equiv= "content-type" charset= "utf-8">
+    <title>ToDoApp</title>
+</head>
+<body>
+  <h1>ToDoアプリ</h1>
+
+  <section class= "main">
+      <h2>ToDoAppに投稿する</h2>
+
+      <form method= "post">
+          <input type= "text" name= "txt">
+          <input type= "submit" value= "投稿">
+      </form>    
+
+      <table style= "border-collapse: collapse">
+      <?php foreach((array)$BOARD as $DATA): ?>
+      <tr>
+      <form method= "post">
+          <td>
+              <?php echo h($DATA[2]); ?>
+          </td>
+          <td>
+              <?php echo $DATA[1]; ?>
+          </td>
+          <td>
+              <input type= "hidden" name= "del" value= "<?php echo $DATA[0]; ?>">
+              <input type= "submit" value= "削除">
+          </td>
+      </form>
+      </tr>
+      <?php endforeach; ?>
+      </table>
+  </section>
+</body>
