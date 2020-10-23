@@ -57,7 +57,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
   <section class= "main">
       <h2>ToDoAppに投稿する</h2>
 
-      <form method= "post", class = 't'>
+      <form method= "post">
           <input type= "text" name= "txt">
           <input type= "submit" value= "投稿">
       </form>    
