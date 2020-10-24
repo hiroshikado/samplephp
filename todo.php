@@ -77,6 +77,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
               <input type= "submit" value= "削除">
           </td>
       </form>
+        <label><input type="radio" name="sex" value="0">男性</label>
+		<label><input type="radio" name="sex" value="1">女性</label>
       </tr>
       <?php endforeach; ?>
       </table>
