@@ -8,15 +8,34 @@
   <h1>PHP7技術者認定試験(初級)用</h1>
   <section class= "main">
     <?php
-        function test() {
-            $foo = "ローカル変数";
-
-            echo '$foo in global scope: ' . $GLOBALS["foo"] . "<br>";
-            echo '$foo in current scope: ' . $foo . "<br>";
-        }
-
-        $foo = "Example content";
-        test();
+class Goods
+      {
+          //商品名プロパティ
+          private $name = "";
+          //商品価格プロパティ
+          private $price = 0;
+          //コンストラクタ。商品名と商品価格を設定する
+          public function __construct(string $name, int $price)
+          {
+              $this->name = $name;
+              $this->price = $price;
+          }
+          //商品名と価格を表示するメソッド
+          public function printPrice(): void
+          {
+              print($this->name."の価格: ￥".$this->price."<br>");
+          }
+          //商品名のゲッタ
+          public function getName(): string
+          {
+              return $this->name;
+          }
+          //商品価格のゲッタ
+          public function getPrice(): int
+          {
+              return $this->price;
+          }
+      }
     ?>
   </section>
 </body>
