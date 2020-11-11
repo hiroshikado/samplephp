@@ -8,21 +8,23 @@
   <h1>PHP7技術者認定試験(初級)用</h1>
   <section class= "main">
     <?php
-      if (isset($_COOKIE["visited"])){
-          $count = $_COOKIE["visited"] + 1;
-      }else{
-          $count = 1;
-      }
-
-      $flag = setcookie("visited", $count, time() + 180);
-    ?>
-
-    <html>
-    <head><title>PHP TEST</title></head>
-    <body>
-
-    <?php
-        print('<p>訪問回数は'.$count.'回目です</p>');
-    ?>
+      $url = "https://www.sejuku.net/blog/";
+      
+      //cURLセッションを初期化する
+      $ch = curl_init();
+        
+      //URLとオプションを指定する
+      curl_setopt($ch, CURLOPT_URL, $url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        
+      //URLの情報を取得する
+      $res =  curl_exec($ch);
+        
+      //結果を表示する
+      var_dump($res);
+        
+      //セッションを終了する
+      curl_close($conn);
+     ?>
   </section>
 </body>
