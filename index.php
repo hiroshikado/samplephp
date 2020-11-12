@@ -8,18 +8,12 @@
   <h1>PHP7技術者認定試験(初級)用</h1>
   <section class= "main">
     <?php
-      $url = "https://www.sejuku.net/blog/";
-      
-      $ch = curl_init();
-        
-      curl_setopt($ch, CURLOPT_URL, $url);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        
-      $res =  curl_exec($ch);
-        
-      var_dump($res);
-        
-      curl_close($conn);
+      $str = '10時20分';
+      $str_len = strlen($str);
+      $str_mblen = mb_strlen($str);
+
+      print($str.' の文字列の長さは'.$str_len.'です<br>');
+      print($str.' の文字数は'.$str_mblen.'です<br><br>');
      ?>
   </section>
 </body>
